@@ -19,7 +19,6 @@ import Buy from "../pages/Buy";
 import Referals from "../pages/Referals";
 import Staking from "../pages/Staking";
 import Wallet from "../pages/Wallet";
-import Login from "../components/accountPageComponents/login";
 
 // ... the same imports
 
@@ -183,7 +182,7 @@ export default function Routing() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/buy" element={<Buy />} />
           <Route
             path="/referals"

@@ -53,12 +53,14 @@ const LoginNav = () => {
             - Bsc network
           </div>
         ) : (
-          <button
-            className="grad_button text-sm sm:text-sm md:text-base lg:text-base xl:text-base ml-4 mr-4"
-            onClick={connectWallet}
-          >
-            Connect MetaMask
-          </button>
+          <>
+            {/* <button
+              className="grad_button text-sm sm:text-sm md:text-base lg:text-base xl:text-base ml-4 mr-4"
+              onClick={connectWallet}
+            >
+              Connect MetaMask
+            </button> */}
+          </>
         )}
       </div>
       <span></span>

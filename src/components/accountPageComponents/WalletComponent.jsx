@@ -75,20 +75,6 @@ export default function Wallet() {
     await checkAllowance();
   };
 
-  useEffect(() => {
-    if (connected) {
-      initializeEthers();
-    }
-  }, [connected]);
-
-  useEffect(() => {
-    if (connected && reloadAllowance) {
-      // Check both conditions
-      setReloadAllowance(false);
-      checkAllowance();
-    }
-  }, [connected, reloadAllowance]); // Add connected to the dependency array
-
   const checkAllowance = async () => {
     const address = await userSign.getAddress();
     const allowance = await cusdtContract.allowance(address, CONTRACT_ADDRESS);
@@ -173,6 +159,20 @@ export default function Wallet() {
 
     setUserTsBalance(userBalanceInTs);
   };
+
+  useEffect(() => {
+    if (connected) {
+      initializeEthers();
+    }
+  }, [connected]);
+
+  useEffect(() => {
+    if (connected && reloadAllowance) {
+      // Check both conditions
+      checkAllowance();
+      setReloadAllowance(false);
+    }
+  }, [connected, reloadAllowance]);
 
   useEffect(() => {
     if (connected) {
@@ -292,6 +292,13 @@ export default function Wallet() {
     );
   };
 
+  // console.log(`totalPrice2`, totalPrice2);
+  // console.log(`totalPrice`, totalPrice);
+  // console.log(`allowance`, allowance);
+
+  // console.log("Allowance:", allowance, "Type:", typeof allowance);
+  // console.log("TotalPrice2:", totalPrice2, "Type:", typeof totalPrice2);
+
   return (
     <>
       {connected ? (
@@ -357,8 +364,7 @@ export default function Wallet() {
                     <p className="usd_vals">$ {totalPrice2}</p>
                   </div>
                 </div>
-
-                {allowance < totalPrice2 ? (
+                {parseFloat(allowance) < parseFloat(totalPrice2) ? (
                   <>
                     <button
                       className="grad_button"

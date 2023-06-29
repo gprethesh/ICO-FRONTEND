@@ -13,7 +13,7 @@ export default function HeroSection() {
               Peer-to-peer Architecture
             </h1>
             <p className="font-bold text-base md:text-xl mb-10">
-              TetherSwap.com embodies a sophisticated, decentralized platform
+              TetherSwap.net embodies a sophisticated, decentralized platform
               for the exchange of digital currencies, powered by its distinctive
               TetherSwap token (TS). The intricate yet robust ecosystem
               underpinning this initiative offers unprecedented stability to the

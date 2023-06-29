@@ -215,7 +215,7 @@ export default function Platform() {
               </div>
               <p className="font-normal text-[1.125rem] leading-5 my-5">
                 The TS Token is integral to the long-term viability of our
-                Autonomous Trading Platform (ATP). TetherSwap.com boasts an
+                Autonomous Trading Platform (ATP). TetherSwap.net boasts an
                 intuitive user interface, making it a highly approachable ATP
                 for novices. With its competitive lower fees and an array of
                 advantageous features, TetherSwap stands tall against

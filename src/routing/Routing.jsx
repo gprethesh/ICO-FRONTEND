@@ -53,7 +53,7 @@ export function WalletProvider({ children }) {
 
         const network = await provider.getNetwork();
 
-        if (network.chainId === 97) {
+        if (network.chainId === 56) {
           setConnected(true);
         } else {
           window.alert("Please switch to the BSC network in MetaMask.");

@@ -22,10 +22,14 @@ export default function HeroSection() {
               peruse our meticulously detailed WhitePaper.
             </p>
             <div className="flex flex-col lg:flex-row gap-12 sm:justify-center sm:items-center md:items-start  items-center relative z-0">
-              <CustomButton
+              <a
                 title="WhitePaper"
+                target="_blank"
+                href="https://tetherswap.net/whitepaper.pdf"
                 className="custom-button hero-button  text-lg font-extrabold leading-[18px] w-[200px]"
-              />
+              >
+                WhitePaper
+              </a>
             </div>
           </div>
         </div>

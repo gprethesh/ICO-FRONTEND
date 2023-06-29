@@ -59,7 +59,7 @@ export const TakenomicsData = [
   {
     id: 7,
     title: "Contract",
-    subTitle: "0xDf34f62a90717bAc9067A1b9eb49f5e7419FdC7f",
+    subTitle: "0x7AA23F8943f0C0D809E804ebdcb1fed1498d1923",
   },
 ];
 

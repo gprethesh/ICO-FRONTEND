@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MetaMask_Fox from "../../assets/images/MetaMask_Fox.svg";
 import { FaEthereum } from "react-icons/fa";
+import { CustomButton } from "../CustomButton";
 
 import coin from "../../assets/images/comming.webp";
 export default function StackingComponent() {
@@ -136,9 +137,11 @@ export default function StackingComponent() {
               </svg>
               <h2 className="text-3xl font-semibold leadi">Stay Tuned</h2>
               <p className="mt-4 mb-8 text-sm">comming Soon</p>
-              <button className="self-start px-10 py-3 text-lg font-medium rounded-3xl bg-violet-400 text-gray-900">
-                Home
-              </button>
+              <CustomButton
+                title="Home"
+                className="self-start px-10 py-3 text-lg font-medium rounded-3xl bg-violet-400 text-gray-900"
+                path="/"
+              />
             </div>
           </div>
         </section>

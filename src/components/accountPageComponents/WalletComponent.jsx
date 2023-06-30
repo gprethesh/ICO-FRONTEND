@@ -10,6 +10,7 @@ import { ethers } from "ethers";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import Connect from "./Connect";
+const tokenImage = "https://tetherswap.net/assets/logo2-3baa5c43.jpg";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -73,6 +74,36 @@ export default function Wallet() {
       userSign
     );
     await checkAllowance();
+  };
+
+  const addToken = async () => {
+    const tokenAddress = import.meta.env.VITE_APP_CUSDT_TS_CONTRACT_ADDRESS;
+    const tokenSymbol = "TS";
+    const tokenDecimals = 18;
+    const tokenImage = "https://tetherswap.net/assets/logo2-3baa5c43.jpg";
+
+    try {
+      const wasAdded = await ethereum.request({
+        method: "wallet_watchAsset",
+        params: {
+          type: "ERC20",
+          options: {
+            address: tokenAddress,
+            symbol: tokenSymbol,
+            decimals: tokenDecimals,
+            image: tokenImage,
+          },
+        },
+      });
+
+      if (wasAdded) {
+        console.log("Thanks for your interest!");
+      } else {
+        console.log("Your loss!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const checkAllowance = async () => {
@@ -433,6 +464,21 @@ export default function Wallet() {
                 <p className="total_coin" style={{ gridColumn: "span 2" }}>
                   allowance: <b>{allowance}</b> USDT <span></span>
                 </p>{" "}
+                <p className="total_coin" style={{ gridColumn: "span 2" }}>
+                  <button
+                    type="button"
+                    className="flex items-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-xs font-semibold tracking-widest uppercase rounded"
+                    onClick={addToken} // Added onClick event handler
+                  >
+                    <div className="flex-grow text-center">Import Token</div>
+                    <img
+                      className="ml-auto"
+                      alt="ts"
+                      src={tokenImage}
+                      width="25px"
+                    />
+                  </button>
+                </p>
               </div>
             </div>
 

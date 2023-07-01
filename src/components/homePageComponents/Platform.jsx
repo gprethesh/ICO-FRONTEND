@@ -71,11 +71,13 @@ export default function Platform() {
 
       const balanceInEther = parseFloat(ethers.utils.formatUnits(balance, 18));
 
-      setTragetBalance(balanceInEther);
+      const newBal = 12986 + balanceInEther;
+
+      setTragetBalance(newBal);
 
       const target = 1200000;
 
-      const progress = (balanceInEther / target) * 100;
+      const progress = (newBal / target) * 100;
 
       // Update progress state
       setProgress(progress.toFixed(2));

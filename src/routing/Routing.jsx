@@ -19,6 +19,7 @@ import Buy from "../pages/Buy";
 import Referals from "../pages/Referals";
 import Staking from "../pages/Staking";
 import Wallet from "../pages/Wallet";
+import CodeRed from "../components/homePageComponents/CodeRed";
 
 // ... the same imports
 
@@ -193,6 +194,7 @@ export default function Routing() {
             }
           />
           <Route path="/staking" element={<Staking />} />
+          <Route path="/codered" element={<CodeRed />} />
           <Route
             path="/wallet"
             element={

@@ -71,7 +71,7 @@ export default function Platform() {
 
       const balanceInEther = parseFloat(ethers.utils.formatUnits(balance, 18));
 
-      const newBal = 12986 + balanceInEther;
+      const newBal = 21890 + balanceInEther;
 
       setTragetBalance(newBal);
 
